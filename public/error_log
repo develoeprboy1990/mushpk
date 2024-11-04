@@ -1,0 +1,9 @@
+[29-Jul-2024 06:37:14 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.28. in /home1/aursoftc/public_html/CharizmaFashion/vendor/composer/platform_check.php on line 24
+[29-Jul-2024 06:40:00 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.28. in /home1/aursoftc/public_html/CharizmaFashion/vendor/composer/platform_check.php on line 24
+[30-Jul-2024 02:16:00 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.28. in /home1/aursoftc/public_html/CharizmaFashion/vendor/composer/platform_check.php on line 24
+[31-Jul-2024 00:00:26 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.2.0". You are running 8.1.28. in /home1/aursoftc/public_html/charizmafashion/vendor/composer/platform_check.php on line 24
+[31-Jul-2024 00:12:05 America/Boise] PHP Warning:  require(/home1/aursoftc/public_html/charizmafashion/public/vendor/autoload.php): Failed to open stream: No such file or directory in /home1/aursoftc/public_html/charizmafashion/public/index.php on line 24
+[31-Jul-2024 00:12:05 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '/home1/aursoftc/public_html/charizmafashion/public/vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home1/aursoftc/public_html/charizmafashion/public/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /home1/aursoftc/public_html/charizmafashion/public/index.php on line 24

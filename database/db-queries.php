@@ -1,0 +1,2 @@
+04-11-2024
+ALTER TABLE `carts` ADD `session_id` VARCHAR(255) NULL DEFAULT NULL AFTER `user_id`;
