@@ -113,6 +113,24 @@
                     <option value="Orange" @if(in_array("Orange", $colors)) selected @endif>Orange</option>
                     <option value="Grey" @if(in_array("Grey", $colors)) selected @endif>Grey</option>
                     <option value="Brown" @if(in_array("Brown", $colors)) selected @endif>Brown</option>
+                    <!-- New Colors -->
+                    <option value="Chocolate Brown" @if(in_array("Chocolate Brown", $colors)) selected @endif>Chocolate Brown</option>
+                    <option value="Coffee Brown" @if(in_array("Coffee Brown", $colors)) selected @endif>Coffee Brown</option>
+                    <option value="Multicolour" @if(in_array("Multicolour", $colors)) selected @endif>Multicolour</option>
+                    <option value="Hot Pink" @if(in_array("Hot Pink", $colors)) selected @endif>Hot Pink</option>
+                    <option value="Navy Blue" @if(in_array("Navy Blue", $colors)) selected @endif>Navy Blue</option>
+                    <option value="Khaki" @if(in_array("Khaki", $colors)) selected @endif>Khaki</option>
+                    <option value="Lilac Purple" @if(in_array("Lilac Purple", $colors)) selected @endif>Lilac Purple</option>
+                    <option value="Apricot" @if(in_array("Apricot", $colors)) selected @endif>Apricot</option>
+                    <option value="Maroon" @if(in_array("Maroon", $colors)) selected @endif>Maroon</option>
+                    <option value="Dark Grey" @if(in_array("Dark Grey", $colors)) selected @endif>Dark Grey</option>
+                    <option value="Baby Pink" @if(in_array("Baby Pink", $colors)) selected @endif>Baby Pink</option>
+                    <option value="Yellow Gold" @if(in_array("Yellow Gold", $colors)) selected @endif>Yellow Gold</option>
+                    <option value="Silver" @if(in_array("Silver", $colors)) selected @endif>Silver</option>
+                    <option value="Gold" @if(in_array("Gold", $colors)) selected @endif>Gold</option>
+                    <option value="Burgundy" @if(in_array("Burgundy", $colors)) selected @endif>Burgundy</option>
+                    <option value="Coffin" @if(in_array("Coffin", $colors)) selected @endif>Coffin</option>
+                    <option value="Beige" @if(in_array("Beige", $colors)) selected @endif>Beige</option>
                 @endforeach
             </select>
         </div>

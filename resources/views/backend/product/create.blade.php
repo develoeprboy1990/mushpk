@@ -98,6 +98,24 @@
               <option value="Orange">Orange</option>
               <option value="Grey">Grey</option>
               <option value="Brown">Brown</option>
+              <!-- New Colors -->
+              <option value="Chocolate Brown">Chocolate Brown</option>
+              <option value="Coffee Brown">Coffee Brown</option>
+              <option value="Multicolour">Multicolour</option>
+              <option value="Hot Pink">Hot Pink</option>
+              <option value="Navy Blue">Navy Blue</option>
+              <option value="Khaki">Khaki</option>
+              <option value="Lilac Purple">Lilac Purple</option>
+              <option value="Apricot">Apricot</option>
+              <option value="Maroon">Maroon</option>
+              <option value="Dark Grey">Dark Grey</option>
+              <option value="Baby Pink">Baby Pink</option>
+              <option value="Yellow Gold">Yellow Gold</option>
+              <option value="Silver">Silver</option>
+              <option value="Gold">Gold</option>
+              <option value="Burgundy">Burgundy</option>
+              <option value="Coffin">Coffin</option>
+              <option value="Beige">Beige</option>
           </select>
       </div>
 
