@@ -93,6 +93,30 @@
               @endforeach
           </select>
         </div>
+
+        <!-- Add this in edit.blade.php after the size field -->
+        <div class="form-group">
+            <label for="color">Color</label>
+            <select name="color[]" class="form-control selectpicker" multiple data-live-search="true">
+                <option value="">--Select any color--</option>
+                @foreach($items as $item)              
+                    @php 
+                    $colors = explode(',', $item->color ?? '');
+                    @endphp
+                    <option value="Red" @if(in_array("Red", $colors)) selected @endif>Red</option>
+                    <option value="Blue" @if(in_array("Blue", $colors)) selected @endif>Blue</option>
+                    <option value="Black" @if(in_array("Black", $colors)) selected @endif>Black</option>
+                    <option value="White" @if(in_array("White", $colors)) selected @endif>White</option>
+                    <option value="Green" @if(in_array("Green", $colors)) selected @endif>Green</option>
+                    <option value="Yellow" @if(in_array("Yellow", $colors)) selected @endif>Yellow</option>
+                    <option value="Purple" @if(in_array("Purple", $colors)) selected @endif>Purple</option>
+                    <option value="Orange" @if(in_array("Orange", $colors)) selected @endif>Orange</option>
+                    <option value="Grey" @if(in_array("Grey", $colors)) selected @endif>Grey</option>
+                    <option value="Brown" @if(in_array("Brown", $colors)) selected @endif>Brown</option>
+                @endforeach
+            </select>
+        </div>
+
         <div class="form-group">
           <label for="brand_id">Brand</label>
           <select name="brand_id" class="form-control">

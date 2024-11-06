@@ -85,6 +85,23 @@
         </div>
 
         <div class="form-group">
+          <label for="color">Color</label>
+          <select name="color[]" class="form-control selectpicker" multiple data-live-search="true">
+              <option value="">--Select any color--</option>
+              <option value="Red">Red</option>
+              <option value="Blue">Blue</option>
+              <option value="Black">Black</option>
+              <option value="White">White</option>
+              <option value="Green">Green</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Purple">Purple</option>
+              <option value="Orange">Orange</option>
+              <option value="Grey">Grey</option>
+              <option value="Brown">Brown</option>
+          </select>
+      </div>
+
+        <div class="form-group">
           <label for="brand_id">Brand</label>
           {{-- {{$brands}} --}}
 

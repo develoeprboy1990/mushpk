@@ -52,6 +52,8 @@
 
               <th>Size</th>
 
+              <th>Color</th>
+
               <th>Condition</th>
 
               <th>Brand</th>
@@ -85,6 +87,8 @@
               <th>Discount</th>
 
               <th>Size</th>
+
+              <th>Color</th>
 
               <th>Condition</th>
 
@@ -141,6 +145,8 @@
                     <td>  {{@$product->discount}}% OFF</td>
 
                     <td>{{@$product->size}}</td>
+
+                    <td>{{@$product->color}}</td>
 
                     <td>{{@$product->condition}}</td>
 
