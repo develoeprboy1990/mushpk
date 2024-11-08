@@ -108,6 +108,8 @@ class CartController extends Controller
         $already_cart = Cart::where($cartIdentifier)
             ->where('order_id', null)
             ->where('product_id', $product->id)
+            ->where('size', $request->size)
+            ->where('color', $request->selected_color)
             ->first();
 
         if($already_cart) {
@@ -134,6 +136,10 @@ class CartController extends Controller
             $cart->price = ($product->price-($product->price*$product->discount)/100);
             $cart->quantity = $request->quant[1];
             $cart->amount = ($product->price * $request->quant[1]);
+
+            // Add size and color if provided
+            $cart->size = $request->size;
+            $cart->color = $request->selected_color;
             
             if ($cart->product->stock < $cart->quantity || $cart->product->stock <= 0) {
                 return back()->with('error', 'Stock not sufficient!.');

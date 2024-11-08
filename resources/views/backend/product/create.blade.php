@@ -77,10 +77,14 @@
           <label for="size">Size</label>
           <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
               <option value="">--Select any size--</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
+              <option value="30 (XS)">30 (XS)</option>
+              <option value="32 (XS)">32 (XS)</option>
+              <option value="34 (S)">34 (S)</option>
+              <option value="36 (S)">36 (S)</option>
+              <option value="36 (M)">36 (M)</option>
+              <option value="38 (M)">38 (M)</option>
+              <option value="40 (L)">40 (L)</option>
+              <option value="42 (L)">42 (L)</option>
           </select>
         </div>
 

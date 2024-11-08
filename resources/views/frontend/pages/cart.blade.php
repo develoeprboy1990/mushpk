@@ -93,13 +93,29 @@
 											<td class="image" data-title="No"><img src="{{asset($photo[0])}}" alt="{{$photo[0]}}"></td>
 
 											<td class="product-des" data-title="Description">
-
-												<p class="product-name"><a href="{{route('product-detail',$cart->product['slug'])}}" target="_blank">{{$cart->product['title']}}</a></p>
-
-												<p class="product-des">{!!($cart['summary']) !!}</p>
-
+											    <p class="product-name">
+											        <a href="{{route('product-detail',$cart->product['slug'])}}" target="_blank">
+											            {{$cart->product['title']}}
+											        </a>
+											    </p>
+											    
+											    {{-- Product Variants --}}
+											    <div class="product-variants text-muted small">
+											        @if($cart->color)
+											            <span class="variant-item">
+											                Color: <strong style="text-transform: capitalize;">{{$cart->color}}</strong>
+											            </span>
+											        @endif
+											        
+											        @if($cart->size)
+											            <span class="variant-item ml-2">
+											                Size: <strong>{{$cart->size}}</strong>
+											            </span>
+											        @endif
+											    </div>
+											    
+											    <p class="product-des">{!!($cart['summary']) !!}</p>
 											</td>
-
 											<td class="price" data-title="Price"><span>Rs.{{number_format($cart['price'],2)}}</span></td>
 
 											<td class="qty" data-title="Qty"><!-- Input Order -->
@@ -396,7 +412,43 @@
 
 		}
 
-	</style>
+    .product-variants {
+        margin: 5px 0;
+        color: #666;
+        font-size: 13px;
+    }
+    
+    .variant-item {
+        display: inline-block;
+        padding: 2px 8px;
+        background: #f8f8f8;
+        border-radius: 3px;
+        margin-bottom: 5px;
+    }
+    
+    .variant-item strong {
+        color: #333;
+    }
+    
+    /* If you want color indicator dots */
+    .variant-item.color-variant strong {
+        position: relative;
+        padding-left: 15px;
+    }
+    
+    .variant-item.color-variant strong:before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 5px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
 
 @endpush
 
@@ -432,10 +484,15 @@
 
 			});
 
-
+$('.variant-item').each(function() {
+        let colorText = $(this).find('strong').text().toLowerCase();
+        if ($(this).text().includes('Color:')) {
+            $(this).addClass('color-variant');
+            $(this).find('strong').css('background-color', colorText);
+        }
+    });
 
 		});
-
 
 
 	</script>

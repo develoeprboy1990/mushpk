@@ -151,7 +151,7 @@
 											        @csrf 
 											        <input type="hidden" name="slug" value="{{$product_detail->slug}}">
 
-													{{--
+													
 													@if($product_detail->color)
 													<div class="color">
 													    <h4>Available Color   <span class="selected-color-name">sdfasfd</span></h4>
@@ -180,10 +180,16 @@
 													    <!-- Optional: Add span to show selected color name -->
 														  
 													</div>
-													@endif--}}
+													@endif
 
+														{{-- Size Selection - Only show for specific categories --}}
+												    @php
+												        $categories_with_size = ['Bags']; 
+												        // Add your categories that need size
+												        $show_size = in_array($product_detail->cat_info['title'], $categories_with_size);
+												    @endphp
 
-											        @if($product_detail->size)
+											        @if($show_size && $product_detail->size)
 											        <div class="size-selection mb-4">
 													    <div class="size-label-group">
 													        <h6 class="d-inline-block">Size :</h6>
@@ -200,10 +206,9 @@
 													</div>
 
 											        <!-- Size Guide with Tabs -->
-											        <div class="size-guide-section mb-4">
+															<!-- <div class="size-guide-section mb-4">
 											            <h6>Size Guide</h6>
 											            
-											            <!-- Nav tabs -->
 											            <ul class="nav nav-tabs size-guide-tabs" role="tablist">
 											                <li class="nav-item">
 											                    <a class="nav-link active" data-toggle="tab" href="#tops" role="tab">Tops</a>
@@ -213,9 +218,7 @@
 											                </li>
 											            </ul>
 
-											            <!-- Tab content -->
 											            <div class="tab-content">
-											                <!-- Tops Tab -->
 											                <div class="tab-pane active" id="tops" role="tabpanel">
 											                    <div class="table-responsive">
 											                        <table class="table table-sm table-bordered">
@@ -257,7 +260,6 @@
 											                    </div>
 											                </div>
 
-											                <!-- Pants Tab -->
 											                <div class="tab-pane" id="pants" role="tabpanel">
 											                    <div class="table-responsive">
 											                        <table class="table table-sm table-bordered">
@@ -300,7 +302,7 @@
 											                </div>
 											            </div>
 											            <small class="text-muted">*This data was obtained from manually measuring the product, it may be off by 1-2 CM.</small>
-											        </div>
+											        </div> -->
 											        @endif
 
 											        <div class="quantity mb-4">
