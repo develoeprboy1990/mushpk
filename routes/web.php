@@ -152,7 +152,7 @@
 
     })->name('cart');
 
-    Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout')->middleware('user');
+    Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
 
 // Wishlist
 

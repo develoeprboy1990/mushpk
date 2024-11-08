@@ -199,16 +199,9 @@ class CartController extends Controller
 
     public function checkout(Request $request) {
         // If user is not logged in, redirect to login page
-        if (!Auth::check()) {
-            // Store the intended URL in session
-            session()->put('url.intended', url()->current());
-            return redirect()->route('login')->with('error', 'Please login to proceed with checkout');
-        }
-        
-        // If there was a guest cart, merge it with the user's cart
-        if (session()->has('guest_cart_id')) {
+        if (Auth::check() && session()->has('guest_cart_id')) {
             $this->mergeGuestCart();
-        }
+        }   
         
         return view('frontend.pages.checkout');
     }
