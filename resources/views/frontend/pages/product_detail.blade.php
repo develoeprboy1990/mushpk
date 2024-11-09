@@ -82,41 +82,32 @@
 									<div class="col-lg-6 col-12">
 
 										<!-- Product Slider -->
-
-										<div class="product-gallery">
-
-											<!-- Images slider -->
-
-											<div class="flexslider-thumbnails">
-
-												<ul class="slides">
-
-													@php 
-
-														$photo=explode(',',$product_detail->photo);
-
-													// dd($photo);
-
-													@endphp
-
-													@foreach($photo as $data)
-
-														<li data-thumb="{{asset($data)}}" rel="adjustX:10, adjustY:">
-
-															<img src="{{asset($data)}}" alt="{{asset($data)}}">
-
-														</li>
-
-													@endforeach
-
-												</ul>
-
-											</div>
-
-											<!-- End Images slider -->
-
-										</div>
-
+<div class="product-gallery">
+    <!-- Main Slider -->
+    <div id="slider" class="flexslider">
+        <ul class="slides">
+            @php 
+                $photo=explode(',',$product_detail->photo);
+            @endphp
+            @foreach($photo as $data)
+                <li>
+                    <img src="{{asset($data)}}" alt="{{$product_detail->title}}">
+                </li>
+            @endforeach
+        </ul>
+    </div>
+    
+    <!-- Thumbnail Slider -->
+    <div id="carousel" class="flexslider">
+        <ul class="slides">
+            @foreach($photo as $data)
+                <li>
+                    <img src="{{asset($data)}}" alt="thumbnail">
+                </li>
+            @endforeach
+        </ul>
+    </div>
+</div>
 										<!-- End Product slider -->
 
 									</div>
@@ -1432,8 +1423,54 @@ select.nice-select {
 .gold { background-color: #ffd700; }
 .burgundy { background-color: #800020; }
 .beige { background-color: #f5f5dc; }
-</style>
 
+
+/* Custom styles for Flexslider */
+.product-gallery {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.flexslider {
+    margin: 0 0 20px;
+    border: none;
+    box-shadow: none;
+}
+
+#carousel.flexslider {
+    margin-bottom: 0;
+}
+
+#slider.flexslider {
+    margin-bottom: 15px;
+}
+
+#carousel .flex-viewport {
+    padding: 5px 0;
+}
+
+#carousel .slides li {
+    margin-right: 10px;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#carousel .slides li:hover {
+    border-color: #F7941D;
+}
+
+#carousel .slides li.flex-active-slide {
+    border-color: #F7941D;
+}
+
+.flex-direction-nav a {
+    height: 45px;
+}
+</style>
 
 @endpush
 
@@ -1463,6 +1500,28 @@ $(document).ready(function() {
     
     // Optional: Initialize first color as selected
     $('.color-option:first').trigger('click');
+
+   	 $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 80,
+        itemMargin: 10,
+        asNavFor: '#slider'
+    });
+
+    $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: true,
+        slideshow: true,
+        slideshowSpeed: 4000,
+        sync: "#carousel",
+        start: function(slider) {
+            $('body').removeClass('loading');
+        }
+    }); 
 });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
