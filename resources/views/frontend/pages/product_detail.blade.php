@@ -175,7 +175,7 @@
 
 														{{-- Size Selection - Only show for specific categories --}}
 												    @php
-												        $categories_with_size = ['Bags']; 
+												        $categories_with_size = ['under-garments']; 
 												        // Add your categories that need size
 												        $show_size = in_array($product_detail->cat_info['title'], $categories_with_size);
 												    @endphp
