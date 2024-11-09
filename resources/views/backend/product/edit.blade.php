@@ -96,6 +96,7 @@
               <option value="38 (M)" @if( in_array( "38 (M)",$data ) ) selected @endif >38 (M)</option>
               <option value="40 (L)" @if( in_array( "40 (L)",$data ) ) selected @endif >40 (L)</option>
               <option value="42 (L)" @if( in_array( "42 (L)",$data ) ) selected @endif >42 (L)</option>
+              <option value="one-size" @if( in_array( "one-size",$data ) ) selected @endif>One Size</option>
 
 
               @endforeach

@@ -175,7 +175,7 @@
 
 														{{-- Size Selection - Only show for specific categories --}}
 												    @php
-												        $categories_with_size = ['under-garments']; 
+												        $categories_with_size = ['Under Garments']; 
 												        // Add your categories that need size
 												        $show_size = in_array($product_detail->cat_info['title'], $categories_with_size);
 												    @endphp
@@ -195,6 +195,7 @@
 													        </select>
 													    </div>
 													</div>
+                                                    
 
 											        <!-- Size Guide with Tabs -->
 															<!-- <div class="size-guide-section mb-4">
@@ -320,6 +321,8 @@
 											    </form>
 											</div>
 										</div>
+
+							            <small class="text-muted">*Estimated Delivery days will be 4 to 5 days.</small>
 
 									</div>
 
@@ -671,9 +674,9 @@
 
                                             <img class="hover-img" src="{{asset($photo[0])}}" alt="{{asset($photo[0])}}">
 
-                                            <span class="price-dec">{{$data->discount}} % Off</span>
+                                            {{--<span class="price-dec">{{$data->discount}} % Off</span>
 
-                                                {{-- <span class="out-of-stock">Hot</span> --}}
+                                                 <span class="out-of-stock">Hot</span> --}}
 
                                         </a>
 

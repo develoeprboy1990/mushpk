@@ -85,6 +85,7 @@
               <option value="38 (M)">38 (M)</option>
               <option value="40 (L)">40 (L)</option>
               <option value="42 (L)">42 (L)</option>
+              <option value="one-size">One Size</option>
           </select>
         </div>
 
