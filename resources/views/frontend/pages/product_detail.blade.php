@@ -321,8 +321,7 @@
 											    </form>
 											</div>
 										</div>
-
-							            <small class="text-muted">*Estimated Delivery days will be 4 to 5 days.</small>
+							            <h6 class="d-inline-block text-uppercase ">*Estimated Delivery days will be 4 to 5 days.</h6>
 
 									</div>
 
