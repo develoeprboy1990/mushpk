@@ -240,7 +240,7 @@
 
                                                 @elseif($product->condition=='new')
 
-                                                    <span class="new">New</span
+                                                    <span class="new">New</span>
 
                                                 @elseif($product->condition=='hot')
 
