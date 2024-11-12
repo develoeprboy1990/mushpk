@@ -330,11 +330,9 @@
                                             <li class="@if(Request::path()=='product-grids'||Request::path()=='product-lists')  active  @endif"><a href="{{route('product-grids')}}">Products</a><span class="new">New</span></li>                                              
 
                                                 {{Helper::getHeaderCategory()}}
-
-                                                                            
-
                                                
-
+                                             <li class="{{Request::path()=='cart' ? 'active' : ''}}"><a href="{{route('cart')}}">Cart</a></li>
+                                                
                                             <li class="{{Request::path()=='contact' ? 'active' : ''}}"><a href="{{route('contact')}}">Contact Us</a></li>
 
                                         </ul>
