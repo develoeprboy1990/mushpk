@@ -7,7 +7,7 @@
 <!-- Slider Area -->
 
 @if(count($banners)>0)
-
+<!-- 
     <section id="Gslider" class="carousel slide" data-ride="carousel">
 
         <ol class="carousel-indicators">
@@ -63,7 +63,7 @@
         </a>
 
     </section>
-
+ -->
 @endif
 
 
@@ -72,75 +72,43 @@
 
 
 
+
 <!-- Start Small Banner  -->
-
 <section class="small-banner section">
-
     <div class="container-fluid">
-
-        <div class="row">
-
-            @php
-
-            $category_lists=DB::table('categories')->where('status','active')->limit(3)->get();
-
-            @endphp
-
-            @if($category_lists)
-
-                @foreach($category_lists as $cat)
-
-                    @if($cat->is_parent==1)
-
-                        <!-- Single Banner  -->
-
-                        <div class="col-lg-4 col-md-6 col-12">
-
-                            <div class="single-banner">
-
-                                @if($cat->photo)
-
-                                    <img src="{{asset($cat->photo)}}" alt="{{asset($cat->photo)}}">
-
-                                @else
-
-                                    <img src="https://via.placeholder.com/600x370" alt="#">
-
-                                @endif
-
-                                <div class="content">
-
-                                    <h3>{{$cat->title}}</h3>
-
-                                        <a href="{{route('product-cat',$cat->slug)}}">Discover Now</a>
-
-                                </div>
-
+        <div class="category-scroll-wrapper">
+            <div class="category-scroll" id="categoryScroll">
+                @php
+                $category_lists=DB::table('categories')->where('status','active')->limit(6)->get();
+                @endphp
+                @if($category_lists)
+                    @foreach($category_lists as $cat)
+                        @if($cat->is_parent==1)
+                            <div class="category-item">
+                                <a href="{{route('product-cat',$cat->slug)}}" class="category-link">
+                                    <div class="single-banner">
+                                        @if($cat->photo)
+                                            <img src="{{asset($cat->photo)}}" alt="{{asset($cat->photo)}}">
+                                        @else
+                                            <img src="https://via.placeholder.com/600x370" alt="#">
+                                        @endif
+                                        <h3 class="category-title">{{$cat->title}}</h3>
+                                    </div>
+                                </a>
                             </div>
-
-                        </div>
-
-                    @endif
-
-                    <!-- /End Single Banner  -->
-
-                @endforeach
-
-            @endif
-
+                        @endif
+                    @endforeach
+                @endif
+            </div>
         </div>
-
     </div>
-
 </section>
-
 <!-- End Small Banner -->
-
 
 
 <!-- Start Product Area -->
 
-<div class="product-area section">
+<div class="product-area section pt-2">
 
         <div class="container">
 
@@ -1051,6 +1019,79 @@
 
     }
 
+    .category-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.category-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.category-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    flex: 0 0 auto;
+    width: calc(16.666% - 20px);
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.single-banner {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.single-banner:hover {
+    transform: translateY(-5px);
+}
+
+.single-banner img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.category-title {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .category-item {
+        width: calc(40% - 20px);
+    }
+    
+    .single-banner img {
+        height: 150px;
+    }
+    
+    .category-title {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+}
+
 </style>
 
 @endpush
@@ -1200,6 +1241,51 @@
         return false
 
     }
+
+    $(document).ready(function() {
+    const $scrollContainer = $('#categoryScroll');
+    let scrollInterval;
+
+    function startAutoScroll() {
+        // Clear any existing interval
+        clearInterval(scrollInterval);
+        
+        scrollInterval = setInterval(function() {
+            // Get current scroll position
+            let currentScroll = $scrollContainer.scrollLeft();
+            
+            // Get maximum scroll position
+            let maxScroll = $scrollContainer[0].scrollWidth - $scrollContainer.width();
+            
+            // If we've reached the end, go back to start
+            if (currentScroll >= maxScroll) {
+                $scrollContainer.scrollLeft(0);
+            } else {
+                // Scroll by 1 pixel
+                $scrollContainer.scrollLeft(currentScroll + 1);
+            }
+        }, 20); // Adjust speed here - lower number = faster scroll
+    }
+
+    function stopAutoScroll() {
+        clearInterval(scrollInterval);
+    }
+
+    // Start auto-scroll
+    startAutoScroll();
+
+    // Pause on hover
+    $scrollContainer.hover(
+        function() { stopAutoScroll(); },
+        function() { startAutoScroll(); }
+    );
+
+    // Pause on touch for mobile
+    $scrollContainer.on('touchstart', stopAutoScroll);
+    $scrollContainer.on('touchend', function() {
+        setTimeout(startAutoScroll, 1000);
+    });
+});
 
 </script>
 
