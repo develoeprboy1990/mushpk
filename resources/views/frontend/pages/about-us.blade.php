@@ -62,9 +62,9 @@
 
 							@endphp
 
-							<h3>Welcome To <span>Charizma Fashion</span></h3>
+							<h3>Welcome To <span>Mush Pk</span></h3>
 
-							<p>@foreach($settings as $data) {{$data->description}} @endforeach</p>
+							<p>@foreach($settings as $data) {!!$data->description!!} @endforeach</p>
 
 							<div class="button">
 

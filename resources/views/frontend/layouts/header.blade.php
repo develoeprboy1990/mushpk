@@ -114,9 +114,9 @@
 
                     <div class="search-top">
 
-                        <div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+                        <div class="top-search"><a href="{{route('cart')}}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{Helper::cartCount()}}</span></a></div>
+                        <!--<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
 
-                        <!-- Search Form -->
 
                         <div class="search-top">
 
@@ -128,7 +128,7 @@
 
                             </form>
 
-                        </div>
+                        </div>-->
 
                         <!--/ End Search Form -->
 

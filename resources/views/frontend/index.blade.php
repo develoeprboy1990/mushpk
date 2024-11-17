@@ -591,15 +591,15 @@
 
         <div class="row">
 
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12">
 
                 <!-- Start Single Service -->
 
                 <div class="single-service">
 
-                    <i class="ti-rocket"></i>
+                    <i class="ti-truck"></i>
 
-                    <h4>Free shiping</h4>
+                    <h4>Free Order</h4>
 
                     <p>Orders over Rs.5000/-</p>
 
@@ -609,25 +609,8 @@
 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-12">
 
-                <!-- Start Single Service -->
-
-                <div class="single-service">
-
-                    <i class="ti-reload"></i>
-
-                    <h4>Free Return</h4>
-
-                    <p>Within 30 days returns</p>
-
-                </div>
-
-                <!-- End Single Service -->
-
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12">
 
                 <!-- Start Single Service -->
 
@@ -645,7 +628,7 @@
 
             </div>
 
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12">
 
                 <!-- Start Single Service -->
 
@@ -1018,32 +1001,59 @@
     bottom: 70px;
 
     }
+@media (max-width: 767px) {
+    .mobile-menu-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .mobile-cart {
+        margin-left: 15px;
+    }
+    
+    .mobile-cart .single-icon {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .mobile-cart .total-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #f7941d;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 100%;
+        font-size: 11px;
+        color: #fff;
+    }
+}
 
-    .category-scroll-wrapper {
+/* Hide desktop cart on mobile */
+@media (max-width: 767px) {
+    .right-bar .shopping {
+        display: none;
+    }
+}
+.category-scroll-wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
     padding: 20px 0;
 }
 
 .category-scroll {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: 20px;
     padding: 0 10px;
 }
 
-.category-scroll::-webkit-scrollbar {
-    display: none;
-}
-
 .category-item {
-    flex: 0 0 auto;
-    width: calc(16.666% - 20px);
+    width: 100%;
 }
 
 .category-link {
@@ -1078,8 +1088,9 @@
 }
 
 @media (max-width: 768px) {
-    .category-item {
-        width: calc(40% - 20px);
+    .category-scroll {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .single-banner img {
@@ -1241,51 +1252,6 @@
         return false
 
     }
-
-    $(document).ready(function() {
-    const $scrollContainer = $('#categoryScroll');
-    let scrollInterval;
-
-    function startAutoScroll() {
-        // Clear any existing interval
-        clearInterval(scrollInterval);
-        
-        scrollInterval = setInterval(function() {
-            // Get current scroll position
-            let currentScroll = $scrollContainer.scrollLeft();
-            
-            // Get maximum scroll position
-            let maxScroll = $scrollContainer[0].scrollWidth - $scrollContainer.width();
-            
-            // If we've reached the end, go back to start
-            if (currentScroll >= maxScroll) {
-                $scrollContainer.scrollLeft(0);
-            } else {
-                // Scroll by 1 pixel
-                $scrollContainer.scrollLeft(currentScroll + 1);
-            }
-        }, 20); // Adjust speed here - lower number = faster scroll
-    }
-
-    function stopAutoScroll() {
-        clearInterval(scrollInterval);
-    }
-
-    // Start auto-scroll
-    startAutoScroll();
-
-    // Pause on hover
-    $scrollContainer.hover(
-        function() { stopAutoScroll(); },
-        function() { startAutoScroll(); }
-    );
-
-    // Pause on touch for mobile
-    $scrollContainer.on('touchstart', stopAutoScroll);
-    $scrollContainer.on('touchend', function() {
-        setTimeout(startAutoScroll, 1000);
-    });
-});
 
 </script>
 
