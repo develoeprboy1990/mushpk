@@ -40,6 +40,10 @@
 
 	<!-- Start Contact -->
 
+	@php
+		$settings=DB::table('settings')->get();
+	@endphp
+
 	<section id="contact-us" class="contact-us section">
 
 		<div class="container">
@@ -54,19 +58,16 @@
 
 								<div class="title">
 
-									@php
+									<h3>Contact us</h3>
+									<p>@foreach($settings as $data) {!!$data->short_des!!} @endforeach</p>
 
-										$settings=DB::table('settings')->get();
+									<!-- <h4>Get in touch</h4>
 
-									@endphp
-
-									<h4>Get in touch</h4>
-
-									<h3>Write us a message @auth @else<span style="font-size:12px;" class="text-danger">[You need to login first]</span>@endauth</h3>
+									<h3>Write us a message @auth @else<span style="font-size:12px;" class="text-danger">[You need to login first]</span>@endauth</h3> -->
 
 								</div>
 
-								<form class="form-contact form contact_form" method="post" action="{{route('contact.store')}}" id="contactForm" novalidate="novalidate">
+								<!-- <form class="form-contact form contact_form" method="post" action="{{route('contact.store')}}" id="contactForm" novalidate="novalidate">
 
 									@csrf
 
@@ -144,7 +145,7 @@
 
 									</div>
 
-								</form>
+								</form> -->
 
 							</div>
 
@@ -214,7 +215,7 @@
 
 	<!-- Map Section -->
 
-	<div class="map-section">
+	<!-- <div class="map-section">
 
 		<div id="myMap">
 
@@ -222,7 +223,7 @@
 
 		</div>
 
-	</div>
+	</div> -->
 
 	<!--/ End Map Section -->
 

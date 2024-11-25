@@ -78,13 +78,26 @@
           <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
               <option value="">--Select any size--</option>
               <option value="30 (XS)">30 (XS)</option>
+
               <option value="32 (XS)">32 (XS)</option>
+              <option value="32 (S)">32 (S)</option>
+              
               <option value="34 (S)">34 (S)</option>
+              <option value="34 (M)">34 (M)</option>
+              
               <option value="36 (S)">36 (S)</option>
               <option value="36 (M)">36 (M)</option>
+              <option value="36 (L)">36 (L)</option>
+              
               <option value="38 (M)">38 (M)</option>
+              <option value="38 (L)">38 (L)</option>
+              
               <option value="40 (L)">40 (L)</option>
+              <option value="40 (XL)">40 (XL)</option>
+              
               <option value="42 (L)">42 (L)</option>
+              <option value="42 (XL)">42 (XL)</option>
+              
               <option value="one-size">One Size</option>
           </select>
         </div>
@@ -96,6 +109,7 @@
               <option value="Red">Red</option>
               <option value="Blue">Blue</option>
               <option value="Black">Black</option>
+              <option value="Pink">Pink</option>
               <option value="White">White</option>
               <option value="Green">Green</option>
               <option value="Yellow">Yellow</option>
@@ -121,6 +135,7 @@
               <option value="Burgundy">Burgundy</option>
               <option value="Coffin">Coffin</option>
               <option value="Beige">Beige</option>
+
           </select>
       </div>
 

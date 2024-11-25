@@ -86,16 +86,28 @@
                 $data=explode(',',$item->size);
                 // dd($data);
                 @endphp
-
-
+                
               <option value="30 (XS)" @if( in_array( "30 (XS)",$data ) ) selected @endif >30 (XS)</option>
+
               <option value="32 (XS)" @if( in_array( "32 (XS)",$data ) ) selected @endif >32 (XS)</option>
+              <option value="32 (S)" @if( in_array( "32 (S)",$data ) ) selected @endif>32 (S)</option>
+
               <option value="34 (S)" @if( in_array( "34 (S)",$data ) ) selected @endif >34 (S)</option>
+              <option value="34 (M)" @if( in_array( "34 (M)",$data ) ) selected @endif >34 (M)</option>
+              
               <option value="36 (S)" @if( in_array( "36 (S)",$data ) ) selected @endif >36 (S)</option>
               <option value="36 (M)" @if( in_array( "36 (M)",$data ) ) selected @endif >36 (M)</option>
+              <option value="36 (L)" @if( in_array( "36 (L)",$data ) ) selected @endif>36 (L)</option>
+              
               <option value="38 (M)" @if( in_array( "38 (M)",$data ) ) selected @endif >38 (M)</option>
+              <option value="38 (L)" @if( in_array( "38 (L)",$data ) ) selected @endif>38 (L)</option>
+              
               <option value="40 (L)" @if( in_array( "40 (L)",$data ) ) selected @endif >40 (L)</option>
+              <option value="40 (XL)" @if( in_array( "40 (XL)",$data ) ) selected @endif >40 (XL)</option>
+              
               <option value="42 (L)" @if( in_array( "42 (L)",$data ) ) selected @endif >42 (L)</option>
+              <option value="42 (XL)" @if( in_array( "42 (XL)",$data ) ) selected @endif >42 (XL)</option>
+              
               <option value="one-size" @if( in_array( "one-size",$data ) ) selected @endif>One Size</option>
 
 
@@ -115,6 +127,7 @@
                     <option value="Red" @if(in_array("Red", $colors)) selected @endif>Red</option>
                     <option value="Blue" @if(in_array("Blue", $colors)) selected @endif>Blue</option>
                     <option value="Black" @if(in_array("Black", $colors)) selected @endif>Black</option>
+                    <option value="Pink" @if(in_array("Black", $colors)) selected @endif>Pink</option>
                     <option value="White" @if(in_array("White", $colors)) selected @endif>White</option>
                     <option value="Green" @if(in_array("Green", $colors)) selected @endif>Green</option>
                     <option value="Yellow" @if(in_array("Yellow", $colors)) selected @endif>Yellow</option>
